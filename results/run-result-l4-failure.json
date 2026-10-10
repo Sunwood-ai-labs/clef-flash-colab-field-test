@@ -1,0 +1,78 @@
+{
+  "cases": [],
+  "command": "colab --auth=adc --config ~/.config/colab-cli/clef.json exec -s clef-20261010-01a1249d -f experiment/bootstrap_clef.py; then colab --auth=adc --config ~/.config/colab-cli/clef.json exec -s clef-20261010-01a1249d -f experiment/run_clef.py",
+  "contract_sha256": "1045CEF65B62B5885900C0B7448FD8C0CC93EF2159F1AC1FC7B43ECFAD2530B8",
+  "cuda_allocated_bytes_after_load": null,
+  "cuda_reserved_bytes_after_load": null,
+  "environment": {
+    "accelerate": "1.15.0",
+    "colab_cli_version": "0.7.2",
+    "colab_session": "clef-20261010-01a1249d",
+    "cuda_runtime": "13.0",
+    "host_memory_available_bytes": 52336189440,
+    "host_memory_total_bytes": 56863334400,
+    "huggingface_hub": "1.33.0",
+    "pillow": "11.3.0",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "safetensors": "0.8.0",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.10.2"
+  },
+  "error": {
+    "message": "CUDA out of memory. Tried to allocate 17.23 GiB. GPU 0 has a total capacity of 22.03 GiB of which 4.02 GiB is free. Including non-PyTorch memory, this process has 18.01 GiB memory in use. Of the allocated memory 17.76 GiB is allocated by PyTorch, and 16.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)",
+    "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_7970/2863190716.py\", line 305, in <cell line: 0>\n    model, processor = load_release_model(model_path, device=\"cuda\")\n                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/content/clef-flash-pinned/joint_schema_model.py\", line 508, in load_release_model\n    backbone = Qwen3_5ForConditionalGeneration.from_pretrained(\n        path,\n    ...<2 lines>...\n        **from_pretrained_kwargs,\n    )\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4308, in from_pretrained\n    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)\n                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4389, in _load_pretrained_model\n    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 5069, in caching_allocator_warmup\n    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 17.23 GiB. GPU 0 has a total capacity of 22.03 GiB of which 4.02 GiB is free. Including non-PyTorch memory, this process has 18.01 GiB memory in use. Of the allocated memory 17.76 GiB is allocated by PyTorch, and 16.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n",
+    "type": "OutOfMemoryError"
+  },
+  "failed_at_utc": "2026-10-10T09:12:56.017990+00:00",
+  "gpu": {
+    "actual": "NVIDIA L4",
+    "capability": [
+      8,
+      9
+    ],
+    "nvidia_smi": "NVIDIA L4, 23034 MiB, 18734 MiB, 3830 MiB, 580.82.07",
+    "requested": "L4",
+    "total_memory_bytes": 23659151360
+  },
+  "image_input": {
+    "preprocessing": "Pillow 11.3.0: decode the fixed source JPEG, convert to RGB, then resize the longest side to 1024 pixels using Image.Resampling.LANCZOS while preserving aspect ratio; pass the resulting RGB pixel array directly to the model.",
+    "processed_dimensions": [
+      1024,
+      768
+    ],
+    "processed_rgb_sha256": "0896B9D2D2224E08AEF571D00DBF2F42B80F1B6366984DAC1489558BF94264F9",
+    "remote_path": "/content/candy-source.JPG",
+    "source_bytes": 2289891,
+    "source_dimensions": [
+      4032,
+      3024
+    ],
+    "source_sha256": "FC417C899E94F8DF465B7541C5A70F0EEBB85C414D06345F0B290C061ECCC84C",
+    "source_url": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/p-blog/candy.JPG"
+  },
+  "inference_path": "snapshot_download pinned to release_revision; import joint_schema_model from that snapshot; load_release_model(path, device='cuda'); invoke systemone(model, processor, request)",
+  "model": "Cloudflare/clef-flash",
+  "model_load_seconds": null,
+  "official_source_sha256": "0E304CF7C6500E8BB59BEF7E2AFD2C6373F82596DFB3B57D1AA93C175E2DC3A3",
+  "phase": "load_release_model",
+  "revision": "8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3",
+  "run_id": "clef-flash-text-and-image-20261010-091255Z",
+  "snapshot_download": {
+    "actual_file_count": 55,
+    "actual_total_bytes": 19083416035,
+    "download_seconds": 0.054,
+    "expected_file_count": 17,
+    "expected_total_bytes": 19083378312,
+    "local_path": "/content/clef-flash-pinned",
+    "revision_pinned": "8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3",
+    "started": true
+  },
+  "started_at_utc": "2026-10-10T09:12:55.426531+00:00",
+  "status": "blocked",
+  "total_wall_seconds": 0.582,
+  "unexecuted_cases": [
+    "text-invoice-01",
+    "image-hand-holding-candy-01"
+  ]
+}

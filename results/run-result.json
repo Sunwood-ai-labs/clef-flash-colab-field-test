@@ -1,0 +1,203 @@
+{
+  "cases": [
+    {
+      "case_id": "text-invoice-01",
+      "cuda_peak_allocated_bytes": 19145309696,
+      "cuda_peak_reserved_bytes": 19201523712,
+      "elapsed_seconds": 1.900887,
+      "expected": {
+        "large.noul_minimum": 0.5,
+        "status.choice": "overdue"
+      },
+      "input": {
+        "model": "clef-flash",
+        "questions": {
+          "large": {
+            "instructions": "Is the total above 1000 USD?",
+            "type": "noul"
+          },
+          "status": {
+            "criteria": {
+              "draft": "Not sent.",
+              "overdue": "Invoice is past due.",
+              "paid": "Invoice is paid."
+            },
+            "instructions": "What is the invoice status?",
+            "type": "choice"
+          }
+        },
+        "state": {
+          "invoice": {
+            "currency": "USD",
+            "status": "overdue",
+            "total": 1250.0,
+            "vendor": "Acme"
+          }
+        }
+      },
+      "input_tokens": 260,
+      "modality": "text",
+      "passed": true,
+      "predicted": {
+        "large.noul": 0.9738,
+        "status.choice": "overdue"
+      },
+      "raw_response": {
+        "answers": {
+          "large": {
+            "noul": 0.9738,
+            "type": "noul"
+          },
+          "status": {
+            "choice": "overdue",
+            "confidence": 0.9729,
+            "probabilities": {
+              "draft": 0.0095,
+              "overdue": 0.9729,
+              "paid": 0.0177
+            },
+            "type": "choice"
+          }
+        },
+        "model": "clef-flash",
+        "usage": {
+          "input_tokens": 260,
+          "output_tokens": 0
+        }
+      },
+      "status": "completed"
+    },
+    {
+      "case_id": "image-hand-holding-candy-01",
+      "cuda_peak_allocated_bytes": 19326451200,
+      "cuda_peak_reserved_bytes": 19388170240,
+      "elapsed_seconds": 2.443118,
+      "expected": {
+        "hand_holding_candy.noul_minimum": 0.5
+      },
+      "input": {
+        "image": {
+          "input_sha256": "FC417C899E94F8DF465B7541C5A70F0EEBB85C414D06345F0B290C061ECCC84C",
+          "path": "experiment/assets/candy.JPG",
+          "preprocessing": "Pillow 11.3.0: decode the fixed source JPEG, convert to RGB, then resize the longest side to 1024 pixels using Image.Resampling.LANCZOS while preserving aspect ratio; pass the resulting RGB pixel array directly to the model.",
+          "processed_dimensions": [
+            1024,
+            768
+          ],
+          "processed_rgb_sha256": "0896B9D2D2224E08AEF571D00DBF2F42B80F1B6366984DAC1489558BF94264F9",
+          "remote_path": "/content/candy-source.JPG",
+          "source": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/p-blog/candy.JPG",
+          "source_bytes": 2289891,
+          "source_dimensions": [
+            4032,
+            3024
+          ],
+          "source_sha256": "FC417C899E94F8DF465B7541C5A70F0EEBB85C414D06345F0B290C061ECCC84C"
+        },
+        "model": "clef-flash",
+        "questions": {
+          "hand_holding_candy": {
+            "instructions": "Is a human hand visibly holding several pieces of candy?",
+            "type": "noul"
+          }
+        },
+        "state": "Inspect the attached photo."
+      },
+      "input_tokens": 927,
+      "modality": "image",
+      "passed": true,
+      "predicted": {
+        "hand_holding_candy.noul": 0.9716
+      },
+      "raw_response": {
+        "answers": {
+          "hand_holding_candy": {
+            "noul": 0.9716,
+            "type": "noul"
+          }
+        },
+        "model": "clef-flash",
+        "usage": {
+          "input_tokens": 927,
+          "output_tokens": 0
+        }
+      },
+      "status": "completed"
+    }
+  ],
+  "command": "colab --auth=adc --config ~/.config/colab-cli/clef.json exec -s clef-20261010-a100-01a1249d -f experiment/bootstrap_clef.py; then colab --auth=adc --config ~/.config/colab-cli/clef.json exec -s clef-20261010-a100-01a1249d --timeout 1800 -f experiment/run_clef.py",
+  "completed_at_utc": "2026-10-10T10:21:55.147708+00:00",
+  "contract_sha256": "E9ECA29B90B6CB54681F8134CE2FCB761EDE0363C95017F80339E24BAC889ADE",
+  "cuda_allocated_bytes_after_load": 19063236096,
+  "cuda_reserved_bytes_after_load": 19088277504,
+  "environment": {
+    "accelerate": "1.15.0",
+    "colab_cli_version": "0.7.2",
+    "colab_runtime_id": "gpu-a100-s-kkb-usw4b1-1qqjni87xntzc",
+    "colab_session": "clef-20261010-a100-01a1249d",
+    "cuda_runtime": "13.0",
+    "host_memory_available_bytes": 87428599808,
+    "host_memory_total_bytes": 89629196288,
+    "huggingface_hub": "1.33.0",
+    "pillow": "11.3.0",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "safetensors": "0.8.0",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.10.2"
+  },
+  "error": null,
+  "gpu": {
+    "actual": "NVIDIA A100-SXM4-40GB",
+    "capability": [
+      8,
+      0
+    ],
+    "nvidia_smi": "NVIDIA A100-SXM4-40GB, 40960 MiB, 6 MiB, 40437 MiB, 580.82.07",
+    "requested": "A100",
+    "total_memory_bytes": 42405855232
+  },
+  "image_input": {
+    "preprocessing": "Pillow 11.3.0: decode the fixed source JPEG, convert to RGB, then resize the longest side to 1024 pixels using Image.Resampling.LANCZOS while preserving aspect ratio; pass the resulting RGB pixel array directly to the model.",
+    "processed_dimensions": [
+      1024,
+      768
+    ],
+    "processed_rgb_sha256": "0896B9D2D2224E08AEF571D00DBF2F42B80F1B6366984DAC1489558BF94264F9",
+    "remote_path": "/content/candy-source.JPG",
+    "source_bytes": 2289891,
+    "source_dimensions": [
+      4032,
+      3024
+    ],
+    "source_sha256": "FC417C899E94F8DF465B7541C5A70F0EEBB85C414D06345F0B290C061ECCC84C",
+    "source_url": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/p-blog/candy.JPG"
+  },
+  "inference_path": "snapshot_download pinned to release_revision; import joint_schema_model from that snapshot; load_release_model(path, device='cuda'); invoke systemone(model, processor, request)",
+  "loaded_model": {
+    "all_parameters_cuda": true,
+    "first_parameter_device": "cuda:0",
+    "first_parameter_dtype": "torch.bfloat16"
+  },
+  "model": "Cloudflare/clef-flash",
+  "model_load_seconds": 20.136,
+  "official_source_sha256": "0E304CF7C6500E8BB59BEF7E2AFD2C6373F82596DFB3B57D1AA93C175E2DC3A3",
+  "outcome": "PASS",
+  "phase": "complete",
+  "revision": "8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3",
+  "run_id": "clef-flash-text-and-image-20261010-102040Z",
+  "snapshot_download": {
+    "actual_file_count": 54,
+    "actual_total_bytes": 19083383439,
+    "download_seconds": 49.144,
+    "expected_file_count": 17,
+    "expected_total_bytes": 19083378312,
+    "local_path": "/content/clef-flash-pinned",
+    "revision_pinned": "8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3",
+    "started": true
+  },
+  "started_at_utc": "2026-10-10T10:20:40.889327+00:00",
+  "status": "completed",
+  "total_wall_seconds": 74.252,
+  "unexecuted_cases": []
+}

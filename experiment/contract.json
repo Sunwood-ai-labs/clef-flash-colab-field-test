@@ -1,0 +1,130 @@
+{
+  "experiment_id": "clef-flash-text-and-image-20261010",
+  "preregistered_date": "2026-10-10",
+  "target": {
+    "model_id": "Cloudflare/clef-flash",
+    "release_revision": "8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3",
+    "model_card": "https://huggingface.co/Cloudflare/clef-flash",
+    "official_source_file": "experiment/release-source/joint_schema_model.py",
+    "official_source_sha256": "0E304CF7C6500E8BB59BEF7E2AFD2C6373F82596DFB3B57D1AA93C175E2DC3A3",
+    "architecture": "Cloudflare Clef-Flash joint-schema decision head on Qwen/Qwen3.5-9B",
+    "snapshot_file_count": 17,
+    "snapshot_total_bytes": 19083378312
+  },
+  "execution_contract": {
+    "runtime": "Google Colab Python CLI on WSL Ubuntu-24.04",
+    "cli_version": "0.7.2",
+    "auth_strategy": "existing ADC; no credential values recorded",
+    "session_config": "~/.config/colab-cli/clef.json",
+    "session_name": "clef-20261010-a100-01a1249d",
+    "gpu_requested": "A100",
+    "inference_path": "snapshot_download pinned to release_revision; import joint_schema_model from that snapshot; load_release_model(path, device='cuda'); invoke systemone(model, processor, request)",
+    "prohibited_substitutions": [
+      "Transformers pipeline",
+      "generate()",
+      "mock",
+      "another model"
+    ],
+    "session_runtime_id": "gpu-a100-s-kkb-usw4b1-1qqjni87xntzc"
+  },
+  "metric_plan": {
+    "model_load_seconds": "Wall time for load_release_model after the pinned snapshot is downloaded.",
+    "case_elapsed_seconds": "Wall time for one systemone call, including encode_record and the model forward pass.",
+    "input_tokens": "The input_tokens field returned by systemone.",
+    "cuda_allocated_bytes_after_load": "torch.cuda.memory_allocated after model load.",
+    "cuda_peak_allocated_bytes_per_case": "torch.cuda.max_memory_allocated after resetting peak stats immediately before the case.",
+    "cuda_peak_reserved_bytes_per_case": "torch.cuda.max_memory_reserved after resetting peak stats immediately before the case.",
+    "gpu_name_and_total_memory": "torch.cuda device name and total memory; corroborate with nvidia-smi.",
+    "answer_match": "Compare the returned typed answer with the fixed expected label/threshold below."
+  },
+  "cases": [
+    {
+      "case_id": "text-invoice-01",
+      "modality": "text",
+      "input": {
+        "model": "clef-flash",
+        "state": {
+          "invoice": {
+            "vendor": "Acme",
+            "total": 1250.0,
+            "currency": "USD",
+            "status": "overdue"
+          }
+        },
+        "questions": {
+          "status": {
+            "type": "choice",
+            "instructions": "What is the invoice status?",
+            "criteria": {
+              "paid": "Invoice is paid.",
+              "overdue": "Invoice is past due.",
+              "draft": "Not sent."
+            }
+          },
+          "large": {
+            "type": "noul",
+            "instructions": "Is the total above 1000 USD?"
+          }
+        }
+      },
+      "expected": {
+        "status.choice": "overdue",
+        "large.noul_minimum": 0.5
+      },
+      "pass_criteria": "status.choice equals 'overdue' and large.noul is strictly greater than 0.5."
+    },
+    {
+      "case_id": "image-hand-holding-candy-01",
+      "modality": "image",
+      "input": {
+        "model": "clef-flash",
+        "state": "Inspect the attached photo.",
+        "image": {
+          "path": "experiment/assets/candy.JPG",
+          "source": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/p-blog/candy.JPG",
+          "source_sha256": "FC417C899E94F8DF465B7541C5A70F0EEBB85C414D06345F0B290C061ECCC84C",
+          "input_sha256": "FC417C899E94F8DF465B7541C5A70F0EEBB85C414D06345F0B290C061ECCC84C",
+          "preprocessing": "Pillow 11.3.0: decode the fixed source JPEG, convert to RGB, then resize the longest side to 1024 pixels using Image.Resampling.LANCZOS while preserving aspect ratio; pass the resulting RGB pixel array directly to the model."
+        },
+        "questions": {
+          "hand_holding_candy": {
+            "type": "noul",
+            "instructions": "Is a human hand visibly holding several pieces of candy?"
+          }
+        }
+      },
+      "expected": {
+        "hand_holding_candy.noul_minimum": 0.5
+      },
+      "pass_criteria": "hand_holding_candy.noul is strictly greater than 0.5."
+    }
+  ],
+  "contract_revision": 2,
+  "amendments": [
+    {
+      "amendment_id": "A1",
+      "amended_at_utc": "2026-10-10T10:00:59.447Z",
+      "reason": "A single official BF16 load on the L4 failed during Transformers caching allocator warmup with CUDA OOM; no case inference completed.",
+      "prior_execution": {
+        "gpu_requested_in_original_contract": "L4",
+        "session_name_in_original_contract": "clef-20261010-01a1249d",
+        "actual_retry_session_name": "clef-20261010-02-01a1249d",
+        "actual_retry_runtime_id": "gpu-l4-s-kkb-ass1a0-280pxuv5jg8sb",
+        "failure_result": "experiment/run-result-l4-failure.json"
+      },
+      "updated_gpu_requested": "A100",
+      "updated_session_name": "clef-20261010-a100-01a1249d",
+      "updated_session_runtime_id": "gpu-a100-s-kkb-usw4b1-1qqjni87xntzc",
+      "unchanged_conditions": [
+        "model_id",
+        "release_revision",
+        "official_source_sha256",
+        "case inputs",
+        "expected outputs",
+        "image preprocessing",
+        "official load_release_model and systemone path"
+      ],
+      "prior_contract_sha256": "1045CEF65B62B5885900C0B7448FD8C0CC93EF2159F1AC1FC7B43ECFAD2530B8"
+    }
+  ]
+}

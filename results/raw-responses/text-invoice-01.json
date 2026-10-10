@@ -1,0 +1,23 @@
+{
+  "answers": {
+    "large": {
+      "noul": 0.9738,
+      "type": "noul"
+    },
+    "status": {
+      "choice": "overdue",
+      "confidence": 0.9729,
+      "probabilities": {
+        "draft": 0.0095,
+        "overdue": 0.9729,
+        "paid": 0.0177
+      },
+      "type": "choice"
+    }
+  },
+  "model": "clef-flash",
+  "usage": {
+    "input_tokens": 260,
+    "output_tokens": 0
+  }
+}

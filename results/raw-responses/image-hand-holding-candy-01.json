@@ -1,0 +1,13 @@
+{
+  "answers": {
+    "hand_holding_candy": {
+      "noul": 0.9716,
+      "type": "noul"
+    }
+  },
+  "model": "clef-flash",
+  "usage": {
+    "input_tokens": 927,
+    "output_tokens": 0
+  }
+}
