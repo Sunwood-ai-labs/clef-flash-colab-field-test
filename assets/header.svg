@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-label="Cloudflare Clef-flash on Google Colab A100: text and image decision field test">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B0F14"/><stop offset="0.6" stop-color="#11151B"/><stop offset="1" stop-color="#1C140C"/></linearGradient>
+<radialGradient id="glow" cx="0.82" cy="0.25" r="0.6"><stop offset="0" stop-color="#F38020" stop-opacity="0.20"/><stop offset="1" stop-color="#F38020" stop-opacity="0"/></radialGradient>
+<linearGradient id="title" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FBC38D"/></linearGradient>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#FFFFFF" stroke-opacity="0.035"/></pattern>
+<clipPath id="r"><rect width="1280" height="420" rx="20"/></clipPath>
+</defs>
+<g clip-path="url(#r)">
+<rect width="1280" height="420" fill="url(#bg)"/><rect width="1280" height="420" fill="url(#grid)"/><rect width="1280" height="420" fill="url(#glow)"/>
+<g font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">
+<rect x="64" y="70" width="278" height="30" rx="15" fill="#F38020" fill-opacity="0.14" stroke="#F38020" stroke-opacity="0.55"/>
+<text x="203" y="90" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="2" fill="#FBAD41">DECISION MODEL FIELD TEST</text>
+<text x="64" y="158" font-size="54" font-weight="800" fill="url(#title)" letter-spacing="-1">Cloudflare</text>
+<text x="64" y="216" font-size="54" font-weight="800" fill="url(#title)" letter-spacing="-1">Clef-flash</text>
+<text x="64" y="262" font-size="24" font-weight="600" fill="#9CA3AF"><tspan fill="#F38020">×</tspan> Google Colab A100 <tspan fill="#6B7280" font-weight="400">— text + image</tspan></text>
+</g>
+<g font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif"><rect x="64" y="304" width="186" height="64" rx="12" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.10"/><text x="82" y="332" font-size="22" font-weight="800" fill="#F9FAFB">0.97+</text><text x="82" y="354" font-size="12.5" fill="#9CA3AF" letter-spacing="0.4">on expected answers</text></g>
+<g font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif"><rect x="264" y="304" width="186" height="64" rx="12" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.10"/><text x="282" y="332" font-size="22" font-weight="800" fill="#F9FAFB">18.0 GiB</text><text x="282" y="354" font-size="12.5" fill="#9CA3AF" letter-spacing="0.4">peak GPU memory</text></g>
+<g font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif"><rect x="464" y="304" width="186" height="64" rx="12" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.10"/><text x="482" y="332" font-size="22" font-weight="800" fill="#F9FAFB">1.9–2.4 s</text><text x="482" y="354" font-size="12.5" fill="#9CA3AF" letter-spacing="0.4">per decision call</text></g>
+<rect x="676" y="52" width="556" height="316" rx="16" fill="#000000" fill-opacity="0.28" stroke="#FFFFFF" stroke-opacity="0.08"/>
+<text x="698" y="82" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6B7280" letter-spacing="1">QUESTIONS IN, PROBABILITIES OUT</text>
+<text x="698" y="112" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#D1D5DB">invoice · status (choice)</text>
+<text x="718" y="136" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#FBAD41">overdue</text>
+<rect x="850" y="124" width="290" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.06"/>
+<rect x="850" y="124" width="282.1" height="14" rx="7" fill="#F38020"/>
+<text x="1152" y="136" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#F9FAFB">0.9729</text>
+<text x="718" y="160" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6B7280">paid</text>
+<rect x="850" y="148" width="290" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.06"/>
+<rect x="850" y="148" width="14.0" height="14" rx="7" fill="#6B7280"/>
+<text x="1152" y="160" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6B7280">0.0177</text>
+<text x="718" y="184" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6B7280">draft</text>
+<rect x="850" y="172" width="290" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.06"/>
+<rect x="850" y="172" width="14.0" height="14" rx="7" fill="#6B7280"/>
+<text x="1152" y="184" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#6B7280">0.0095</text>
+<text x="698" y="218" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#D1D5DB">invoice · total above 1000 USD? (noul)</text>
+<text x="718" y="242" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#FBAD41">true</text>
+<rect x="850" y="230" width="290" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.06"/>
+<rect x="850" y="230" width="282.4" height="14" rx="7" fill="#F38020"/>
+<text x="1152" y="242" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#F9FAFB">0.9738</text>
+<text x="698" y="276" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" fill="#D1D5DB">photo · hand holding candy? (noul)</text>
+<text x="718" y="300" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#FBAD41">true</text>
+<rect x="850" y="288" width="290" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.06"/>
+<rect x="850" y="288" width="281.8" height="14" rx="7" fill="#F38020"/>
+<text x="1152" y="300" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#F9FAFB">0.9716</text>
+<rect x="0" y="0" width="6" height="420" fill="#F38020"/>
+</g></svg>

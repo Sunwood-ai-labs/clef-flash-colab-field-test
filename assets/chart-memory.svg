@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 346" width="880" height="346" role="img" aria-label="L4の22 GiBでは読み込みで不足。A100では最大18.0 GiBで動いた" font-family="'Segoe UI','Hiragino Sans','Yu Gothic UI','Meiryo','Noto Sans JP',sans-serif">
+<rect x="0.5" y="0.5" width="879" height="345" rx="12" fill="#FFFFFF" stroke="#D1D5DB"/>
+<text x="32" y="44" font-size="20" font-weight="700" fill="#111827">L4の22 GiBでは読み込みで不足。A100では最大18.0 GiBで動いた</text>
+<text x="32" y="70" font-size="13.5" fill="#6B7280">同じモデル、同じ入力、同じ読み込み手順（BF16）。変えたのはGPUだけ。PyTorchが確保した量</text>
+<text x="32" y="104" font-size="12.5" fill="#6B7280">GPUと場面</text>
+<text x="250" y="104" font-size="12.5" fill="#6B7280">GPUメモリ（GiB）。灰色の帯がそのGPUの全容量</text>
+<text x="32" y="137" font-size="14" font-weight="700" fill="#111827">L4<tspan font-weight="400" fill="#6B7280" font-size="12">　全22.0 GiB</tspan></text>
+<text x="32" y="155" font-size="12" fill="#6B7280">読み込みの途中で停止</text>
+<rect x="250" y="124" width="293.7" height="24" rx="4" fill="#EEF0F2"/>
+<rect x="250" y="124" width="236.8" height="24" rx="4" fill="#6B7280"><title>使用中 17.76 GiB</title></rect>
+<rect x="487.6" y="124.75" width="228.2" height="22.5" rx="3" fill="none" stroke="#111827" stroke-width="1.5" stroke-dasharray="5 4"><title>追加で要求 17.23 GiB</title></rect>
+<path d="M726.5 130l12 12M738.5 130l-12 12" stroke="#111827" stroke-width="2.5"/>
+<text x="258" y="141" font-size="12.5" font-weight="700" fill="#FFFFFF">使用中 17.76</text>
+<text x="553.7" y="141" font-size="12.5" font-weight="700" fill="#111827">追加で要求 17.23</text>
+<text x="750.5" y="141" font-size="12.5" font-weight="700" fill="#111827">不足</text>
+<line x1="543.7" x2="543.7" y1="118" y2="154" stroke="#111827" stroke-width="1.5"/>
+<text x="543.7" y="168" font-size="11.5" text-anchor="middle" fill="#6B7280">L4の上限 22.03</text>
+<text x="32" y="189" font-size="14" font-weight="700" fill="#111827">A100<tspan font-weight="400" fill="#6B7280" font-size="12">　全39.5 GiB</tspan></text>
+<text x="32" y="207" font-size="12" fill="#6B7280">読み込み直後</text>
+<rect x="250" y="176" width="526.6" height="24" rx="4" fill="#EEF0F2"/>
+<rect x="250" y="176" width="236.7" height="24" rx="4" fill="#D9660A"><title>読み込み直後: 17.75 GiB</title></rect>
+<text x="496.7" y="193" font-size="14" font-weight="700" fill="#111827">17.75<tspan font-weight="400" fill="#6B7280"> GiB</tspan></text>
+<text x="32" y="241" font-size="14" font-weight="700" fill="#111827">A100<tspan font-weight="400" fill="#6B7280" font-size="12">　全39.5 GiB</tspan></text>
+<text x="32" y="259" font-size="12" fill="#6B7280">請求書の判定中（最大）</text>
+<rect x="250" y="228" width="526.6" height="24" rx="4" fill="#EEF0F2"/>
+<rect x="250" y="228" width="237.7" height="24" rx="4" fill="#D9660A"><title>請求書の判定中（最大）: 17.83 GiB</title></rect>
+<text x="497.7" y="245" font-size="14" font-weight="700" fill="#111827">17.83<tspan font-weight="400" fill="#6B7280"> GiB</tspan></text>
+<text x="32" y="293" font-size="14" font-weight="700" fill="#111827">A100<tspan font-weight="400" fill="#6B7280" font-size="12">　全39.5 GiB</tspan></text>
+<text x="32" y="311" font-size="12" fill="#6B7280">写真の判定中（最大）</text>
+<rect x="250" y="280" width="526.6" height="24" rx="4" fill="#EEF0F2"/>
+<rect x="250" y="280" width="240.0" height="24" rx="4" fill="#D9660A"><title>写真の判定中（最大）: 18.00 GiB</title></rect>
+<text x="500.0" y="297" font-size="14" font-weight="700" fill="#111827">18.00<tspan font-weight="400" fill="#6B7280"> GiB</tspan></text>
+</svg>

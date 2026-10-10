@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 368" width="880" height="368" role="img" aria-label="動いたのはClef-flashの2例。Clef-omniとホスト版は試せていない" font-family="'Segoe UI','Hiragino Sans','Yu Gothic UI','Meiryo','Noto Sans JP',sans-serif">
+<rect x="0.5" y="0.5" width="879" height="367" rx="12" fill="#FFFFFF" stroke="#D1D5DB"/>
+<text x="32" y="44" font-size="20" font-weight="700" fill="#111827">動いたのはClef-flashの2例。Clef-omniとホスト版は試せていない</text>
+<text x="32" y="70" font-size="13.5" fill="#6B7280">塗りつぶしの丸は実行して期待どおり、×は実行して失敗、点線の丸は未実行</text>
+<circle cx="48" cy="120" r="10" fill="#D9660A"/><path d="M43 120l4 4l6 -8" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="72" y="125" font-size="15" font-weight="700" fill="#111827">Clef-flash・テキスト</text>
+<text x="330" y="125" font-size="14" fill="#111827">A100で実行。期待どおり（1.90秒）</text>
+<circle cx="48" cy="162" r="10" fill="#D9660A"/><path d="M43 162l4 4l6 -8" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="72" y="167" font-size="15" font-weight="700" fill="#111827">Clef-flash・画像</text>
+<text x="330" y="167" font-size="14" fill="#111827">A100で実行。期待どおり（2.44秒）</text>
+<circle cx="48" cy="204" r="9.25" fill="#FFFFFF" stroke="#111827" stroke-width="1.5"/><path d="M44 200l8 8M52 200l-8 8" stroke="#111827" stroke-width="2"/>
+<text x="72" y="209" font-size="15" font-weight="700" fill="#111827">Clef-flash・L4での実行</text>
+<text x="330" y="209" font-size="14" fill="#111827">モデルの読み込みでGPUメモリ不足</text>
+<circle cx="48" cy="246" r="9.25" fill="#FFFFFF" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="72" y="251" font-size="15" font-weight="700" fill="#111827">Clef-omni・音声と動画</text>
+<text x="330" y="251" font-size="14" fill="#6B7280">H100の割り当てを拒否され、未実行</text>
+<circle cx="48" cy="288" r="9.25" fill="#FFFFFF" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="72" y="293" font-size="15" font-weight="700" fill="#111827">Workers AIのホスト版API</text>
+<text x="330" y="293" font-size="14" fill="#6B7280">未実行。料金と速度は公式の発表値のみ</text>
+<circle cx="48" cy="330" r="9.25" fill="#FFFFFF" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="72" y="335" font-size="15" font-weight="700" fill="#111827">正解率や速度の比較評価</text>
+<text x="330" y="335" font-size="14" fill="#6B7280">未実施。今回は2例の動作確認</text>
+</svg>
